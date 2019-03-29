@@ -147,7 +147,7 @@ PersWiFiManager::PersWiFiManager(WebServer& s, DNSServer& d): _connectHandler(nu
 
 bool PersWiFiManager::attemptConnection(const String& ssid, const String& pass) {
   //attempt to connect to wifi
-  wl_status_t status;
+  wl_status_t status = WiFi.status();
 
   if (ssid.length()) {
 #if defined(ESP8266)
